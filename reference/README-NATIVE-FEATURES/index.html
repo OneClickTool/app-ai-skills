@@ -1,0 +1,7309 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Pipeline Claude cho người không biết code làm app bán subscription — từ ý tưởng tới App Store + Google Play.">
+      
+      
+      
+        <link rel="canonical" href="https://oneclicktool.github.io/app-ai-skills/reference/README-NATIVE-FEATURES/">
+      
+      
+        <link rel="prev" href="../README-APP-PUBLISH-03-RELEASE-FOLDERS/">
+      
+      
+        <link rel="next" href="../README-REFERENCES/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>README-NATIVE-FEATURES — thư viện native (Kotlin/Swift) & cách test - App AI Skills</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Figtree";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../site/stylesheets/extra.991d0883c1.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#readme-native-features-thu-vien-native-kotlinswift-cach-test" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../.." title="App AI Skills" class="md-header__button md-logo" aria-label="App AI Skills" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.82 12.5c.02-.17.04-.33.04-.5s-.02-.33-.04-.5l1.08-.81c.1-.07.1-.19.06-.32L9.93 8.64c-.06-.11-.2-.14-.31-.11l-1.28.5c-.27-.2-.56-.36-.87-.49l-.2-1.33c0-.12-.11-.21-.24-.21H5c-.15 0-.26.09-.28.21L4.5 8.53c-.29.12-.58.3-.85.47l-1.28-.5c-.12-.03-.25 0-.31.13l-1.03 1.73c-.06.14-.03.25.07.33l1.08.81c-.02.17-.03.34-.03.5 0 .17.02.33.04.5l-1.09.82c-.1.07-.1.21-.06.32l1.03 1.73c.06.13.2.13.31.13l1.28-.5c.27.18.56.34.87.47l.2 1.32c.01.12.12.21.27.21h2.04c.13 0 .24-.09.25-.21l.21-1.32c.3-.12.59-.3.86-.47l1.28.5c.12.03.25 0 .31-.13L11 13.64c.04-.11 0-.24-.08-.32zM6 13.75c-1 0-1.8-.78-1.8-1.75S5 10.25 6 10.25s1.8.78 1.8 1.75S7 13.75 6 13.75M17 1H7a2 2 0 0 0-2 2v3h2V4h10v16H7v-2H5v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            App AI Skills
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              README-NATIVE-FEATURES — thư viện native (Kotlin/Swift) & cách test
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Chế độ tối"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chế độ tối" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Chế độ sáng"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chế độ sáng" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guide/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hướng dẫn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Bắt đầu
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/app-setup/SKILL/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pipeline
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/app-feature/SKILL/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sau ra mắt
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/app-flutter/SKILL/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Skill phụ
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../README-APP-BUILD-01-MACOS-TRIAL-TEST-PLAN/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tài liệu
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../file-templates/LEARNED/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mẫu file
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="App AI Skills" class="md-nav__button md-logo" aria-label="App AI Skills" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.82 12.5c.02-.17.04-.33.04-.5s-.02-.33-.04-.5l1.08-.81c.1-.07.1-.19.06-.32L9.93 8.64c-.06-.11-.2-.14-.31-.11l-1.28.5c-.27-.2-.56-.36-.87-.49l-.2-1.33c0-.12-.11-.21-.24-.21H5c-.15 0-.26.09-.28.21L4.5 8.53c-.29.12-.58.3-.85.47l-1.28-.5c-.12-.03-.25 0-.31.13l-1.03 1.73c-.06.14-.03.25.07.33l1.08.81c-.02.17-.03.34-.03.5 0 .17.02.33.04.5l-1.09.82c-.1.07-.1.21-.06.32l1.03 1.73c.06.13.2.13.31.13l1.28-.5c.27.18.56.34.87.47l.2 1.32c.01.12.12.21.27.21h2.04c.13 0 .24-.09.25-.21l.21-1.32c.3-.12.59-.3.86-.47l1.28.5c.12.03.25 0 .31-.13L11 13.64c.04-.11 0-.24-.08-.32zM6 13.75c-1 0-1.8-.78-1.8-1.75S5 10.25 6 10.25s1.8.78 1.8 1.75S7 13.75 6 13.75M17 1H7a2 2 0 0 0-2 2v3h2V4h10v16H7v-2H5v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2"/></svg>
+
+    </a>
+    App AI Skills
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../guide/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hướng dẫn
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hướng dẫn
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/01-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Chuẩn bị máy và tài khoản
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/02-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Tìm ý tưởng đáng làm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/03-money-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Tính chuyện tiền và chốt MVP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/04-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Thiết kế và mockup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/05-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Chọn cách làm app: Flutter, Native hay Mac
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/06-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Dựng project, làm tính năng, chạy thử
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/07-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Soát trước khi nộp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/08-ship/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Build bản phát hành và lên store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/09-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Ra mắt và tăng trưởng
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/10-after-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Sau ra mắt: thêm tính năng, sửa lỗi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bắt đầu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bắt đầu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tổng quan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline A → Z
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill và hợp đồng file
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Router /app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 0 · /app-setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 0 · /app-setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-setup/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 0 — setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-setup/references/accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tài khoản để bán app subscription — thứ tự, chi phí, thời gian chờ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 1 ◆ · /app-research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 1 ◆ · /app-research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-research/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 1 — research (CỔNG 1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-research/references/user-need/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nhu cầu thật của người dùng — đọc cái người ta cần, không chỉ cái bảng xếp hạng cho thấy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 2 · /app-money
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 2 · /app-money
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-money/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 2 — money
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-money/references/donation-rule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Không gây quỹ trong app — luật store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-money/references/subscription-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscription playbook — luật store + cách định giá cho app đầu tay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-spec/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 3 ◆ · /app-spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 4 ◆ · /app-design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 4 ◆ · /app-design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-design/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 4 — design (CỔNG 3)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-design/references/design-guideline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design guideline — nguyên tắc rút gọn cho app subscription đầu tay
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-mockup/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 4b · /app-mockup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-scaffold/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 5 · /app-scaffold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-build/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 6 ⟲ · /app-build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-run/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 7 · /app-run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-review/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 8 ◆ · /app-review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 9 · /app-release
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 9 · /app-release
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-release/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 9 — release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-release/references/android-signing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ký app Android (Flutter) cho Google Play
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-release/references/apple-signing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Từ số 0: mua tài khoản Apple và dựng bộ khoá ký
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 10 · /app-listing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 10 · /app-listing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-listing/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 10 — listing (ASO)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-listing/references/aso-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASO after the first paste — the part that compounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-listing/references/aso-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASO cho app (không phải game) — giới hạn + cách viết
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-listing/references/store-assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Store design — screenshots and icon, from capture to upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 11 · /app-publish
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 11 · /app-publish
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-publish/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 11 — publish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-publish/references/app-review-guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Review Guidelines — cổng kiểm trước khi bấm Submit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-publish/references/appstore-account/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Apple account — what it costs, how long it takes, when you can sell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-publish/references/appstore-runbook-apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook App Store — app Flutter có subscription
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-publish/references/play-runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook Google Play — app Flutter có subscription
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_14" id="__nav_4_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 12 · /app-marketing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bước 12 · /app-marketing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-marketing/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 12 — marketing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-marketing/references/launch-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch playbook — app đầu tay, ngân sách gần 0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-grow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bước 13 ⟲ · /app-grow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sau ra mắt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sau ra mắt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-feature/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-feature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-fix/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-fix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-plan/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-progress/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill phụ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skill phụ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_1" id="__nav_6_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-flutter/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-flutter — luật code Flutter trong pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-flutter/references/packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gói Flutter đã cân nhắc cho pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_2" id="__nav_6_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-native
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-native
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-native/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-native — Kotlin/Compose + Swift/SwiftUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-native/references/kotlin-compose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    kotlin-android-code — logic Kotlin tách khỏi Compose UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-native/references/swift-swiftui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    swift-ios-code — logic Swift tách khỏi SwiftUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-native/references/ui-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    native-ui-layout — dựng layout Compose / SwiftUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1_3" id="__nav_6_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-paywall
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-paywall
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-paywall/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-paywall — RevenueCat + paywall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-paywall/references/revenuecat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RevenueCat — API đã kiểm và cách dùng trong pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Mac
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    App Mac
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_1" id="__nav_6_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-macos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-macos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-macos — Swift 6 + SwiftUI cho app Mac để bàn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos/references/distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phát hành app Mac — hai đường, chọn một
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos/references/file-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Đụng vào file của người dùng — sandbox, quyền, theo dõi thư mục, tìm trùng, hoàn tác
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos/references/media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nén ảnh và video trên macOS — API native, bẫy license, tham số
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos/references/swift-strict/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swift 6 + SwiftUI cho app Mac — luật cứng và mẫu code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos/references/top-repos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Mac mã nguồn mở đáng đọc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos/references/trial-license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trial + license key cho app Mac
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-macos-listing/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-macos-listing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_3" id="__nav_6_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-mac-landing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-mac-landing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-mac-landing/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-mac-landing — landing page app Mac, học từ app native đẹp nhất
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-mac-landing/references/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas — landing page của app Mac native (awesome-native-macosx-apps)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-mac-landing/references/layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout — 8 kiểu bố cục landing app Mac
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-mac-landing/references/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theme — 7 kiểu màu + chữ của landing app Mac
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing & nội dung
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Marketing & nội dung
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_1" id="__nav_6_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-gtm
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-gtm
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-gtm/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-gtm — marketing từ số 0, làm như việc thật
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-gtm/references/channels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kênh cho indie đi từ số 0 — chọn gì, làm sao, bao lâu ra kết quả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_2" id="__nav_6_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-indie
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-indie
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-indie/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-indie — học cách các indie đang kiếm tiền, rồi làm y cách đó cho sản phẩm của mình
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-indie/references/playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playbook indie — mindset, SEO, quảng cáo, giá (sổ học dần)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-reddit/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-reddit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_4" id="__nav_6_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-store-art
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-store-art
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-store-art/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Store art — ảnh store kể chuyện, màn hình thật
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-store-art/references/store-art-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Store art playbook — ảnh store kể chuyện
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_5" id="__nav_6_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-video
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-video
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-video/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App video — quay thật, dựng bằng code, đăng nhiều chỗ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-video/references/video-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video playbook — loại video, luồng YouTube, cách làm, nơi host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-youtube-channel/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-youtube-channel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-youtube-upload/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-youtube-upload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3_8" id="__nav_6_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    /app-demand
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    /app-demand
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-demand/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-demand — đo nhu cầu tới mức "ra mắt là có người mua"
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-demand/references/method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-demand — phương pháp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/app-demand/references/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    app-demand — nguồn và tool đã kiểm (2026-10-14)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tài liệu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tài liệu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Build
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-BUILD-01-MACOS-TRIAL-TEST-PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan test trial + license key trên Mac
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-DESIGN-01-MACOS-UI-UX-ATLAS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS UI/UX Atlas — học bằng giao diện app Mac thật
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Listing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-LISTING-01-MACOS-APP-STORE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Đưa app Mac lên Mac App Store — từng bước
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Marketing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-01-COMMUNITY-LISTINGS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listing cộng đồng — trang công khai doanh thu + directory ra mắt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-02-LEARN-TOP-GITHUB-REPOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Top repo GitHub về marketing cho indie dev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-03-LEARN-TOP-SKILLS-INDIE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Top skill marketing cho indie dev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-04-LEARN-SKILLS-FROM-ZERO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing từ số 0 — skill nào, làm theo thứ tự nào
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-05-LEARN-HONEST-SELL-FROM-ZERO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lời thật cho indie dev cần kiếm tiền từ số 0 và tự đi bán
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-06-LEARN-BUILD-TRUST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tạo độ tin chân thành — vì sao đồ hay, miễn phí mà vẫn không ai thử
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-07-LEARN-SOURCES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nguồn & xuất xứ — [app chưa ra mắt] học từ đâu, tin được tới đâu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-08-LEARN-START-HERE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here — bắt đầu từ số 0, 14 ngày
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-MARKETING-09-SEO-KEYWORD-TOOLS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEO + ASO keyword — skill nào dùng được, tool nào miễn phí (kiểm 2026-10-08)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-PIPELINE-01-GITHUB-ACTIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions trong pipeline app — làm được gì, không làm được gì, tốn bao nhiêu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-PIPELINE-02-PHONE-FLOW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Làm app bằng điện thoại — giao việc trên iPhone, Claude code, GitHub Actions build + chụp màn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postlaunch
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Postlaunch
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-POSTLAUNCH-01-CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sau khi go live — bảng việc từng bước (App)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publish
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Publish
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-PUBLISH-01-GUIDELINE-4-3-SPAM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bị từ chối 4.3(a) Spam — chuyện gì, sửa thế nào, lần sau tránh ra sao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-PUBLISH-02-PUBLISH-KIT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thư mục publish/ — chỉ thứ đem lên store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-APP-PUBLISH-03-RELEASE-FOLDERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bản phát hành nằm ở đâu — một khuôn cho mọi app + game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chung
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chung
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README-NATIVE-FEATURES — thư viện native (Kotlin/Swift) & cách test
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README-NATIVE-FEATURES — thư viện native (Kotlin/Swift) & cách test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bang-1-phan-cung-cam-bien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bảng 1 — Phần cứng &amp; cảm biến
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ghi-chu-then-chot-oc-truoc-khi-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ghi chú then chốt (đọc trước khi code)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bang-2-service-ha-tang-tuong-ung-khai-niem-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bảng 2 — Service hạ tầng (tương ứng khái niệm web)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bang-3-ui-component-a-so-a-co-chinh-chu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bảng 3 — UI component (đa số đã có chính chủ)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-test-tinh-nang-phan-cung-phuong-phap-chung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách test tính năng phần cứng — phương pháp chung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách test tính năng phần cứng — phương pháp chung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bo-cong-cu-a-kiem-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bộ công cụ (đã kiểm 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-tung-loai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đo từng loại
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-that-phai-noi-thang-cai-khong-test-tu-ong-uoc-o-au-ca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sự thật phải nói thẳng — cái KHÔNG test tự động được ở đâu cả
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nguon-a-kiem-2026-09-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nguồn (đã kiểm 2026-09-16)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-REFERENCES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README-REFERENCES — skill, plugin và repo được tích hợp hoặc tham khảo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README-SCRIPTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README-SCRIPTS — script dùng chung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mẫu file
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mẫu file
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/LEARNED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LEARNED.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    change.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/demand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    demand.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    design.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/grow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    grow.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gtm.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/indie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    indie.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/listing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    listing.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/macos_listing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macos_listing.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    marketing.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/mockup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mockup.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/money/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    money.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/money_macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    money_macos.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/publish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    publish.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    research.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    review.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    setup.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/setup_macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    setup_macos.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    spec.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    state.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/store_art/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    store_art.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/video-remotion/videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    videos.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/x-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    x-marketing.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/youtube_channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    youtube_channel.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-templates/youtube_upload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    youtube_upload.md
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bang-1-phan-cung-cam-bien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bảng 1 — Phần cứng &amp; cảm biến
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ghi-chu-then-chot-oc-truoc-khi-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ghi chú then chốt (đọc trước khi code)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bang-2-service-ha-tang-tuong-ung-khai-niem-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bảng 2 — Service hạ tầng (tương ứng khái niệm web)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bang-3-ui-component-a-so-a-co-chinh-chu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bảng 3 — UI component (đa số đã có chính chủ)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-test-tinh-nang-phan-cung-phuong-phap-chung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách test tính năng phần cứng — phương pháp chung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách test tính năng phần cứng — phương pháp chung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bo-cong-cu-a-kiem-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bộ công cụ (đã kiểm 2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-tung-loai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đo từng loại
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-that-phai-noi-thang-cai-khong-test-tu-ong-uoc-o-au-ca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sự thật phải nói thẳng — cái KHÔNG test tự động được ở đâu cả
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nguon-a-kiem-2026-09-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nguồn (đã kiểm 2026-09-16)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+
+
+<div class="page" data-area="reference" data-kit="">
+  
+                  
+
+
+
+<h1 id="readme-native-features-thu-vien-native-kotlinswift-cach-test">README-NATIVE-FEATURES — thư viện native (Kotlin/Swift) &amp; cách test<a class="headerlink" href="#readme-native-features-thu-vien-native-kotlinswift-cach-test" title="Permanent link">&para;</a></h1>
+<p>Tra cứu khi làm app <strong>native</strong> (<code>stack: native</code> — Kotlin/Jetpack Compose + Swift/SwiftUI): mỗi tính năng
+(phần cứng/OS · service hạ tầng · UI component) nên dùng lib nào, tốn bao lâu, và <strong>test thế nào</strong> (đúng · nhanh · tốn pin/ram).
+Ba bảng: <strong>1</strong> phần cứng &amp; cảm biến · <strong>2</strong> service hạ tầng (API/log/auth/bio/storage) · <strong>3</strong> UI component (maps/animation/calendar/dropdown/popup/navigation).</p>
+<p><strong>Ký hiệu lib cộng đồng:</strong> <strong>AND (Kotlin)</strong> = dùng cho Android/Jetpack Compose · <strong>iOS (Swift)</strong> = dùng cho iOS/SwiftUI · <strong>Cả 2 nền</strong> = có bản cho cả hai (ghi tên gói Kotlin/Swift kèm theo).</p>
+<p><strong>Luật số liệu (theo CLAUDE.md — không bịa số):</strong>
+- ★ sao / lượt tải: <strong>chưa đo</strong> trong bảng này — muốn con số thì chạy <code>gh api repos/&lt;owner&gt;/&lt;repo&gt;</code> và ghi kèm ngày.
+- Cột "Thời gian" là <strong>ƯỚC LƯỢNG cho dev có kinh nghiệm</strong>, KHÔNG phải số đo. App thật đo lại rồi ghi nguồn + ngày.
+- Kết luận thư viện: kiểm ngày <strong>2026-09-16</strong> bằng web. Lib có thể deprecate — mở link trước khi tin.</p>
+<p><strong>Nguyên tắc chọn:</strong> ưu tiên API <strong>chính chủ</strong> (Google Jetpack/Play Services · Apple framework). Chỉ thêm lib cộng đồng
+khi chính chủ không có sẵn (rõ nhất: ô nhập OTP, và lớp bọc BLE).</p>
+<hr />
+<h2 id="bang-1-phan-cung-cam-bien">Bảng 1 — Phần cứng &amp; cảm biến<a class="headerlink" href="#bang-1-phan-cung-cam-bien" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tính năng</th>
+<th>Android — chính chủ</th>
+<th>iOS — chính chủ</th>
+<th>Lib cộng đồng đáng cân nhắc</th>
+<th>Thời gian <em>(ước lượng)</em></th>
+<th>Test chính (đúng/nhanh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Xử lý File</strong></td>
+<td>Photo Picker <code>PickVisualMedia</code>; <strong>SAF</strong> <code>OpenDocument</code>/<code>CreateDocument</code>/<code>OpenDocumentTree</code>; đọc/ghi qua <code>ContentResolver</code></td>
+<td>SwiftUI <code>.fileImporter</code>/<code>.fileExporter</code> + <code>UniformTypeIdentifiers</code>; <code>FileManager</code>; <strong>security-scoped bookmark</strong> để mở lại</td>
+<td><em>Không cần</em> — API chính chủ đủ</td>
+<td>~1–3h</td>
+<td>Tách IO sau interface → unit test byte round-trip; ca lỗi: user huỷ (URI null), file khổng lồ (stream, đừng load hết → OOM), quyền hết hạn sau reboot/bookmark stale</td>
+</tr>
+<tr>
+<td><strong>Quét Barcode/QR</strong></td>
+<td><strong>Google Code Scanner</strong> (ML Kit, không cần quyền camera); <strong>ML Kit Barcode</strong> + CameraX (UI tự làm)</td>
+<td><strong>VisionKit <code>DataScannerViewController</code></strong> (iOS 16+ <strong>&amp; máy A12+</strong>); fallback <strong>AVFoundation</strong> <code>AVCaptureMetadataOutput</code></td>
+<td>ML Kit + CameraX là chuẩn, không lib nào trội hẳn</td>
+<td>Code Scanner ~1–2h · custom ~0.5–1.5 ngày</td>
+<td>Bộ ảnh mẫu nhiều định dạng (QR/EAN-13/Code128/PDF417): đo <strong>tỉ lệ decode đúng</strong> + <strong>độ trễ</strong> (median/p90); lặp ở thiếu sáng, nghiêng 30–45°, mờ, mã rách</td>
+</tr>
+<tr>
+<td><strong>Chụp hình / Camera</strong></td>
+<td><strong>CameraX</strong> (<code>ImageCapture</code>+<code>Preview</code>); Compose: <code>camera-compose</code> + <code>CameraXViewfinder</code> (đã stable 2025)</td>
+<td><strong>PhotosUI <code>PhotosPicker</code></strong> (chọn ảnh có sẵn); <strong><code>UIImagePickerController</code></strong> (chụp nhanh); <strong>AVFoundation</strong> (camera tự dựng)</td>
+<td><em>Không cần</em></td>
+<td>CameraX ~0.5–1 ngày · PhotosPicker ~1–2h · AVFoundation ~1–2 ngày</td>
+<td>Kiểm quyền (cho/từ chối/xin lại) + chuỗi Info.plist/CAMERA; ảnh ra đúng độ phân giải/xoay (EXIF); vòng đời (xoay máy, gọi đến, nền→trước); <strong>máy thật</strong> (giả lập iOS không có camera)</td>
+</tr>
+<tr>
+<td><strong>Ô nhập OTP 4 số</strong></td>
+<td><strong>Không có component chính chủ</strong> — tự dựng 1 <code>BasicTextField</code> + ô trang trí (khuyên) hoặc N <code>TextField</code>+<code>FocusRequester</code></td>
+<td><strong>Không có</strong> — tự dựng <code>@FocusState</code> + <code>TextField</code>; SMS autofill bằng <code>.textContentType(.oneTimeCode)</code></td>
+<td><strong>AND (Kotlin):</strong> OhTeePee, banmarkovic/OtpTextField, pushpalroy/ComposeOtpVerify (SMS Retriever) · <strong>iOS (Swift):</strong> OTPFieldView-SwiftUI, SwiftPinput <em>(★ chưa đo)</em></td>
+<td>Tự dựng ~3–6h · +SMS autofill ~+0.5 ngày</td>
+<td>Auto-advance ô→ô; backspace lùi &amp; xoá; <strong>paste</strong> chuỗi 4/6 số phân bổ đúng, cắt thừa, loại chữ; SMS autofill trên máy thật; VoiceOver/TalkBack + bàn phím số; xoay máy giữ số</td>
+</tr>
+<tr>
+<td><strong>Bluetooth (BLE)</strong></td>
+<td>Platform <code>BluetoothLeScanner</code>+<code>BluetoothGatt</code> (một lệnh/lần — phải xếp hàng); <strong>Nordic Kotlin-BLE-Library</strong>, <strong>RxAndroidBle</strong> bọc giúp</td>
+<td><strong>CoreBluetooth</strong> <code>CBCentralManager</code>/<code>CBPeripheral</code>; nền: state preservation &amp; restoration</td>
+<td><strong>AND (Kotlin/Java):</strong> Nordic Android-BLE-Library (Java, ổn định), Nordic Kotlin-BLE-Library (coroutine), RxAndroidBle · <strong>iOS (Swift):</strong> CoreBluetooth chính chủ thường đủ, ít cần lib <em>(★ chưa đo)</em></td>
+<td>Platform ~2–4 ngày · có lib ~1–2 ngày · +nền iOS ~+2–3 ngày</td>
+<td><strong>Cần peripheral thật hoặc giả</strong>: dùng <strong>nRF Connect</strong>/<strong>LightBlue</strong> làm peripheral ảo; đo scan→connect→notify (median + tỉ lệ reconnect); tắt/bật nguồn &amp; ra khỏi vùng để test timeout/GATT 133. <strong>Giả lập KHÔNG có BLE</strong></td>
+</tr>
+<tr>
+<td><strong>Tracking (vị trí)</strong></td>
+<td><strong>FusedLocationProviderClient</strong>; <strong>Geofencing API</strong>; <strong>ActivityRecognition</strong>; trip = tự cộng <code>distanceTo</code> trong <strong>foreground service</strong> type <code>location</code></td>
+<td><strong>CoreLocation</strong> <code>CLLocationManager</code> (+ iOS17 <code>CLLocationUpdate</code>/<code>CLMonitor</code>); Significant-Change (ít pin); Core Motion cho ngữ cảnh</td>
+<td><em>Không cần</em> (dùng Play Services/CoreLocation)</td>
+<td>Foreground ~0.5–1 ngày · geofence ~1–2 ngày · <strong>trip chạy nền tin cậy ~1–2 tuần</strong></td>
+<td>Replay tuyến bằng <strong>GPX/KML</strong> (emulator Extended Controls / Xcode scheme); geofence: đo trễ + false-trigger; test nền (kill app vẫn log); pin: <code>HIGH_ACCURACY</code> vs <code>BALANCED</code> bằng Energy Profiler/Instruments</td>
+</tr>
+<tr>
+<td><strong>Permission</strong></td>
+<td><code>ActivityResultContracts.RequestPermission</code> + <code>shouldShowRequestPermissionRationale</code> + deep-link Settings</td>
+<td>Mỗi capability tự xin (<code>AVCaptureDevice.requestAccess</code>, <code>CLLocationManager…</code>), <strong>bắt buộc chuỗi Info.plist</strong></td>
+<td><strong>AND (Kotlin):</strong> Accompanist Permissions (Compose, còn sống ~0.37.x nhưng experimental) · <strong>iOS (Swift):</strong> không cần, mỗi API tự xin <em>(★ chưa đo)</em></td>
+<td>~30ph–1h / quyền</td>
+<td>Bọc sau interface → unit test máy trạng thái granted/denied/<strong>permanently-denied</strong>; AND <code>GrantPermissionRule</code>, iOS <code>addUIInterruptionMonitor</code>; ca: thu hồi quyền khi app ở nền (re-check on resume), <code>POST_NOTIFICATIONS</code> API 33+</td>
+</tr>
+<tr>
+<td><strong>Notification</strong></td>
+<td><code>NotificationCompat</code> + <strong>channel</strong> (bắt buộc API 26+); <strong><code>POST_NOTIFICATIONS</code></strong> runtime API 33+; push = <strong>FCM</strong>; hẹn giờ = WorkManager; FGS type bắt buộc API 34</td>
+<td><strong>UserNotifications</strong> <code>UNUserNotificationCenter</code> (local + quyền + foreground present + tap); push = <strong>APNs</strong>; không có "foreground service"</td>
+<td><strong>Cả 2 nền:</strong> Firebase Cloud Messaging (AND <code>firebase-messaging</code> Kotlin · iOS <code>FirebaseMessaging</code> Swift) — nếu muốn 1 backend push <em>(★ chưa đo)</em></td>
+<td>Local ~1–2h · FCM/APNs ~3–5h</td>
+<td>Unit test dựng payload (channel/importance/intent) với fake manager; ca: <strong>bị chặn ở OS</strong> (không báo lỗi → check <code>areNotificationsEnabled()</code>/<code>getNotificationSettings</code>); <strong>push cần máy thật — APNs không chạy trên giả lập iOS</strong>; token FCM cũ; Doze trễ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ghi-chu-then-chot-oc-truoc-khi-code">Ghi chú then chốt (đọc trước khi code)<a class="headerlink" href="#ghi-chu-then-chot-oc-truoc-khi-code" title="Permanent link">&para;</a></h2>
+<p><strong>Barcode</strong>
+- ML Kit <strong>bundled</strong> (<code>barcode-scanning</code>): offline, chạy cả máy không có Google Play — nhưng +~2–3MB APK.
+- <strong>Code Scanner / unbundled</strong> (<code>play-services-*</code>): APK nhỏ, cần Play Services + tải model lần đầu, <strong>không tuỳ biến UI</strong>.
+- iOS: <code>DataScannerViewController</code> cần <strong>iOS 16+ VÀ chip A12+</strong> — luôn kiểm <code>isSupported</code>/<code>isAvailable</code>, có nhánh AVFoundation dự phòng.</p>
+<p><strong>OTP</strong> — cả 2 nền <strong>không có component chính chủ</strong>. Tự dựng (1 field ẩn + ô hiển thị là sạch nhất) hoặc lib cộng đồng.</p>
+<p><strong>BLE — cạm bẫy</strong>
+- Android 12+ (API 31): quyền mới <code>BLUETOOTH_SCAN</code> / <code>BLUETOOTH_CONNECT</code> / <code>BLUETOOTH_ADVERTISE</code> thay quyền cũ. Cờ <code>neverForLocation</code> chỉ đặt nếu <strong>không</strong> suy ra vị trí từ scan (đặt sai lọc mất beacon mang vị trí).
+- GATT <strong>một thao tác/lần</strong> — nguồn bug kinh điển; dùng lib hoặc tự xếp hàng. Lỗi 133 hay gặp khi kết nối chập chờn.
+- iOS: peripheral nhận dạng bằng UUID (không thấy MAC); scan nền phải khai service UUID và bị bóp.</p>
+<p><strong>Tracking — cạm bẫy &amp; quyền riêng tư</strong>
+- Android 10+: vị trí nền là quyền <strong>riêng</strong> <code>ACCESS_BACKGROUND_LOCATION</code>, xin <strong>sau</strong> khi có foreground; Play Store soi kỹ "Allow all the time".
+- iOS: tối đa <strong>20 vùng</strong> geofence/app; "Always" phải qua luồng When-In-Use trước rồi iOS nhắc nâng cấp.
+- <strong>Đừng lẫn</strong> "location tracking" (tính năng của bạn) với <strong>ATT tracking</strong> (<code>AppTrackingTransparency</code>) — ATT chỉ áp cho việc ghép dữ liệu <strong>quảng cáo xuyên công ty</strong> / dùng IDFA, cần <code>NSUserTrackingUsageDescription</code>.</p>
+<p><strong>Notification</strong> — Android 14+ foreground service phải khai <code>foregroundServiceType</code> + quyền khớp, nếu không <strong>crash</strong>; case không có type hợp lệ thì dùng WorkManager.</p>
+<hr />
+<h2 id="bang-2-service-ha-tang-tuong-ung-khai-niem-web">Bảng 2 — Service hạ tầng (tương ứng khái niệm web)<a class="headerlink" href="#bang-2-service-ha-tang-tuong-ung-khai-niem-web" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Dịch vụ (web ↔)</th>
+<th>Android — chính chủ</th>
+<th>iOS — chính chủ</th>
+<th>Cộng đồng đáng dùng</th>
+<th>Thời gian <em>(ước lượng)</em></th>
+<th>Test / cạm bẫy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API / networking</strong> <em>(thay <code>fetch</code>/axios)</em></td>
+<td><strong>Ktor Client</strong> + kotlinx.serialization (Kotlin thuần); <strong>Retrofit</strong>+OkHttp+Moshi (mặc định thực tế)</td>
+<td><strong>URLSession</strong> <code>data(for:)</code> async/await + <code>Codable</code> (khỏi lib)</td>
+<td><strong>iOS (Swift):</strong> Alamofire (retry/adapter/multipart) · <strong>AND (Kotlin):</strong> dùng Retrofit/Ktor ở cột chính chủ <em>(★ chưa đo)</em></td>
+<td>~0.5–1 ngày</td>
+<td>đặt sau interface + Fake; <strong>OkHttp MockWebServer</strong> / stub <code>URLProtocol</code> → test timeout/500/JSON hỏng/retry/<strong>401→refresh</strong> (single-flight)</td>
+</tr>
+<tr>
+<td><strong>Log</strong></td>
+<td><code>android.util.Log</code>; <strong>Timber</strong> (auto-tag, tự tắt ở release)</td>
+<td><strong>OSLog <code>Logger</code></strong> (privacy-aware); swift-log</td>
+<td><strong>Cả 2 nền</strong> (crash, lớp giám sát để riêng): Crashlytics · Sentry (<code>sentry-android</code> Kotlin · <code>sentry-cocoa</code> Swift)</td>
+<td>~1–3h</td>
+<td>log qua interface, assert level/msg; kiểm <strong>release không log</strong> + <strong>không lộ PII/secret</strong></td>
+</tr>
+<tr>
+<td><strong>Auth</strong></td>
+<td><strong>Credential Manager</strong> (<code>androidx.credentials</code> — thay GSI cũ, gộp passkey + Google + mật khẩu)</td>
+<td><strong>AuthenticationServices</strong> <code>ASAuthorizationController</code> = <strong>Sign in with Apple</strong>; GoogleSignIn-iOS</td>
+<td><strong>Cả 2 nền:</strong> Firebase Auth (AND <code>firebase-auth</code> Kotlin · iOS <code>FirebaseAuth</code> Swift) — backend email/social/phone</td>
+<td>~1–2 ngày (+passkey ~0.5–1)</td>
+<td>⚠️ <strong>Guideline 4.8</strong>: có social login khác thì <strong>BẮT BUỘC có Sign in with Apple</strong> (không thì reject). Test token hết hạn→refresh, revoke→re-login, user huỷ, Apple trả tên/email <strong>chỉ 1 lần đầu</strong></td>
+</tr>
+<tr>
+<td><strong>Bio login</strong> <em>(Face/Touch)</em></td>
+<td><strong>androidx.biometric <code>BiometricPrompt</code></strong> + khoá <strong>Keystore</strong> mở qua <code>CryptoObject</code></td>
+<td><strong>LocalAuthentication <code>LAContext</code></strong> + <strong>Keychain</strong> <code>SecAccessControl</code>; ⚠️ <strong><code>NSFaceIDUsageDescription</code> bắt buộc</strong> (thiếu → crash)</td>
+<td><em>không cần</em></td>
+<td>~0.5–1 ngày</td>
+<td>không unit-test được phần cứng → bọc interface, Fake success/fail/unavailable; máy thật: chưa đăng ký vân tay, <strong>fallback passcode</strong>, huỷ, lockout, <strong>thêm vân tay/face mới → secret vô hiệu</strong> (<code>.biometryCurrentSet</code>) buộc auth lại</td>
+</tr>
+<tr>
+<td><strong>Local storage</strong> <em>(≈ <code>localStorage</code>/remember)</em></td>
+<td><strong>Jetpack DataStore</strong> (thay SharedPreferences); <strong>Room</strong> cho dữ liệu có cấu trúc</td>
+<td><strong>UserDefaults</strong> (cờ/remember); <strong>SwiftData</strong> (iOS17+)/Core Data</td>
+<td><em>(dùng chính chủ)</em></td>
+<td>~0.5–1 ngày</td>
+<td>⚠️ <strong>token/mật khẩu → Keystore/Keychain, TUYỆT ĐỐI không để prefs thường</strong> (<code>EncryptedSharedPreferences</code> đã deprecated). Test migration đổi version, dữ liệu hỏng/thiếu → trả default không crash, ghi đồng thời</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bang-3-ui-component-a-so-a-co-chinh-chu">Bảng 3 — UI component (đa số đã có chính chủ)<a class="headerlink" href="#bang-3-ui-component-a-so-a-co-chinh-chu" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Android — chính chủ</th>
+<th>iOS — chính chủ</th>
+<th>Khi nào cần lib ngoài</th>
+<th>Thời gian <em>(ước lượng)</em></th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maps</strong></td>
+<td><strong>Google Maps SDK + Maps Compose</strong> (<code>GoogleMap{Marker/Polyline}</code>) — <strong>cần API key + billing</strong></td>
+<td><strong>MapKit</strong> — SwiftUI <code>Map{Marker/Annotation/MapPolyline}</code> iOS17+, <strong>free, không cần key</strong></td>
+<td>tránh billing Google — <strong>AND (Kotlin):</strong> MapLibre Native, osmdroid (OSM, không key) · <strong>iOS (Swift):</strong> MapLibre Native, Mapbox; đồng nhất tiles cả 2 nền: Google Maps / Mapbox</td>
+<td>~0.5–1 ngày/nền (+route ~0.5–1)</td>
+<td>render khó unit-test → data/marker/region sau <strong>Fake</strong>; snapshot UI (Paparazzi / swift-snapshot-testing)</td>
+</tr>
+<tr>
+<td><strong>Animation</strong></td>
+<td><strong>Compose built-in</strong>: <code>animate*AsState</code>, <code>AnimatedVisibility</code>, <code>Transition</code>, <code>spring/tween/keyframes</code></td>
+<td><strong>SwiftUI built-in</strong>: <code>withAnimation</code>, <code>.matchedGeometryEffect</code>, <code>PhaseAnimator</code>/<code>KeyframeAnimator</code> (iOS17)</td>
+<td><strong>Cả 2 nền:</strong> Lottie (file JSON designer — AND <code>lottie-compose</code> Kotlin · iOS <code>lottie-ios</code> Swift) · Rive (tương tác theo state — <code>rive-android</code> · <code>rive-ios</code>)</td>
+<td>built-in vài phút–vài h · gắn Lottie/Rive ~1–3h</td>
+<td><strong>không test frame</strong> — assert <strong>trạng thái cuối</strong> + logic trigger (state nào → target nào)</td>
+</tr>
+<tr>
+<td><strong>Calendar / date picker</strong></td>
+<td><strong>M3 <code>DatePicker</code>/<code>DatePickerDialog</code>/<code>DateRangePicker</code></strong></td>
+<td><strong>SwiftUI <code>DatePicker</code></strong> (<code>.graphical</code>/<code>.compact</code>/<code>.wheel</code>); <code>MultiDatePicker</code></td>
+<td>lưới tháng có <strong>chấm sự kiện/ô ngày tuỳ biến</strong> — <strong>AND (Kotlin):</strong> kizitonwose/Calendar (Compose, có bản KMP dùng được cho iOS) · <strong>iOS (Swift):</strong> thường tự dựng <code>LazyVGrid</code> (chưa có lib trội)</td>
+<td>official ~0.5–1h · lưới tuỳ biến ~1–2 ngày (kizitonwose ~0.5–1)</td>
+<td>test <strong>binding ngày chọn</strong> (không test pixel); ca min/max, range start≤end</td>
+</tr>
+<tr>
+<td><strong>Dropdown / select</strong></td>
+<td><strong><code>ExposedDropdownMenuBox</code> + <code>DropdownMenu</code></strong> (M3)</td>
+<td><strong><code>Picker</code></strong> (<code>.menu</code>/<code>.wheel</code>/<code>.segmented</code>) &amp; <strong><code>Menu</code></strong></td>
+<td>gần như <strong>không cần</strong>; chỉ tự dựng khi multi-select-chip / typeahead / 1000+ dòng</td>
+<td>official ~0.5h · custom ~0.5–1.5 ngày</td>
+<td>mở → chọn item → assert giá trị trong state + chữ ô cập nhật; ca danh sách rỗng</td>
+</tr>
+<tr>
+<td><strong>Popup / dialog / sheet / toast</strong></td>
+<td><strong><code>AlertDialog</code></strong>, <strong><code>ModalBottomSheet</code></strong>, <strong><code>Snackbar</code></strong>, <code>Toast</code></td>
+<td><strong><code>.alert</code></strong>, <strong><code>.confirmationDialog</code></strong>, <strong><code>.sheet</code>+<code>.presentationDetents</code></strong> (bottom sheet iOS16+), <code>.popover</code></td>
+<td>⚠️ <strong>iOS (Swift) KHÔNG có toast native</strong> → AlertToast / swiftui-toasts (khe hở thật duy nhất) · <strong>AND (Kotlin):</strong> đã có Snackbar/Toast, không cần</td>
+<td>official ~0.5h · gắn toast iOS ~0.5–1h</td>
+<td>bật bằng state → assert dialog/toast hiện, bấm Confirm → callback chạy + biến mất; toast tự ẩn sau timeout</td>
+</tr>
+<tr>
+<td><strong>Navigation</strong></td>
+<td><strong>Navigation Compose</strong> (<code>NavHost</code>/<code>NavController</code>, route <code>@Serializable</code>) — <strong>stable, dùng cái này</strong>. <strong>Nav3</strong> còn <strong>alpha/beta (9/2026)</strong> → chỉ greenfield</td>
+<td><strong><code>NavigationStack</code></strong> (iOS16+, <code>path</code> binding, <code>.navigationDestination</code>); <code>NavigationSplitView</code> (iPad)</td>
+<td><strong>AND (Kotlin):</strong> Voyager, Decompose (KMP / back-stack tuỳ biến sâu) · <strong>iOS (Swift):</strong> thường tự viết Router <code>@Observable</code> bọc <code>path</code> (chưa có lib trội)</td>
+<td>~2–4h · +deep link/đa cột ~1–2 ngày</td>
+<td>test <strong>route/path state sau Fake</strong> (không test pixel): tap → path <strong>append</strong> route đúng; back → <strong>pop</strong>; deep-link URL → path đúng</td>
+</tr>
+</tbody>
+</table>
+<p><em>Khái niệm Navigation vs web:</em> web router map <strong>URL → view</strong>, trình duyệt giữ history. Native map <strong>route có kiểu → màn hình</strong>, bạn ngày càng <strong>tự sở hữu back stack</strong> như một <strong>list state</strong> để sửa (Nav3 / NavigationStack) — deep link thay cho thanh URL.</p>
+<h2 id="cach-test-tinh-nang-phan-cung-phuong-phap-chung">Cách test tính năng phần cứng — phương pháp chung<a class="headerlink" href="#cach-test-tinh-nang-phan-cung-phuong-phap-chung" title="Permanent link">&para;</a></h2>
+<p><strong>Ý cốt lõi:</strong> phần lớn "test tính năng thiết bị" thật ra là test <strong>logic quanh thiết bị</strong>, không phải test silicon.
+Chẻ mỗi tính năng làm 2 phần → khớp đúng kiến trúc <strong>Repository Fake</strong> repo đang dùng:</p>
+<ol>
+<li><strong>Adapter native mỏng</strong> chạm SDK phần cứng (CameraX, <code>CBCentralManager</code>, <code>CLLocationManager</code>, <code>BluetoothGatt</code>, <code>NotificationManager</code>).</li>
+<li><strong>Logic của bạn</strong> tiêu thụ adapter đó — chỉ gọi <strong>interface bạn tự định nghĩa</strong>, không gọi thẳng SDK.</li>
+</ol>
+<p>→ Unit test phần (2) thật kỹ bằng <strong>Fake</strong> (nhanh, tất định, không cần phần cứng): tính quãng đường, định tuyến chuỗi barcode,
+nhánh permission-denied, máy trạng thái reconnect BLE, format payload notification, retry/backoff.
+→ Phần (1) chỉ verify trên <strong>máy thật + checklist người xem</strong>.</p>
+<h3 id="bo-cong-cu-a-kiem-2026">Bộ công cụ (đã kiểm 2026)<a class="headerlink" href="#bo-cong-cu-a-kiem-2026" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Lớp</th>
+<th>Android</th>
+<th>iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logic + Fake</td>
+<td>JUnit5, <code>kotlinx-coroutines-test</code> (<code>runTest</code>)</td>
+<td><strong>Swift Testing</strong> (<code>@Test</code>, <code>#expect</code>) — chính chủ từ Xcode 16; XCTest <strong>chưa</strong> bỏ</td>
+</tr>
+<tr>
+<td>Logic framework không cần máy</td>
+<td><strong>Robolectric</strong> (chạy cả Espresso &amp; Compose test trên JVM)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>UI tự động</td>
+<td>Espresso, <strong>Compose UI test</strong> (<code>createComposeRule</code>)</td>
+<td><strong>XCUITest</strong> (vẫn thuộc XCTest)</td>
+</tr>
+<tr>
+<td>Tốc độ</td>
+<td><strong>Macrobenchmark</strong> (<code>StartupTimingMetric</code>, <code>FrameTimingMetric</code>) · <strong>Microbenchmark</strong> — <em>máy thật</em></td>
+<td><strong>XCTMetric</strong> trong <code>measure(metrics:)</code>: <code>XCTClockMetric</code>/<code>XCTCPUMetric</code>/<code>XCTMemoryMetric</code>/<code>XCTOSSignpostMetric</code></td>
+</tr>
+<tr>
+<td>Pin/CPU/RAM sâu</td>
+<td>Android Studio Profiler, Perfetto; Macrobench <code>PowerMetric</code>/<code>MemoryUsageMetric</code></td>
+<td><strong>Instruments</strong> (Time Profiler, Allocations, Energy Log)</td>
+</tr>
+<tr>
+<td>Nhiều máy/OS thật</td>
+<td><strong>Firebase Test Lab</strong> (mạnh Android), BrowserStack, AWS Device Farm</td>
+<td>(2 hãng sau)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="o-tung-loai">Đo từng loại<a class="headerlink" href="#o-tung-loai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Đúng/chính xác:</strong> logic → assert với Fake (2 toạ độ cách 1km → <code>distanceBetween</code> ≈ 1000m). Decode thật → AND upload ảnh vào <strong>camera virtual scene</strong> của emulator để ML Kit "nhìn"; iOS giả lập <strong>không có camera</strong> → decode từ <code>UIImage</code> fixture hoặc máy thật.</li>
+<li><strong>Nhanh/độ trễ:</strong> Macrobenchmark (tap→preview, jank) &amp; Microbenchmark (decode 1 frame); iOS <code>XCTClockMetric</code>/<code>XCTOSSignpostMetric</code> có <strong>baseline</strong> để CI fail khi tụt. <strong>Chạy trên máy thật</strong> — số trên giả lập vô nghĩa.</li>
+<li><strong>Hiệu quả (pin/ram):</strong> Macrobench <code>PowerMetric</code>/<code>MemoryUsageMetric</code> + Perfetto (wakelock của BLE/GPS); iOS <code>XCTMemoryMetric</code>/<code>XCTCPUMetric</code> + Instruments Energy Log.</li>
+<li><strong>Tin cậy/flaky:</strong> máy trạng thái (BLE connect→disconnect→retry, permission 3 nhánh) test tất định bằng Fake — phủ mọi nhánh ở đó, không test trên phần cứng; UI test tránh <code>sleep</code>, dùng IdlingResource / auto-sync.</li>
+</ul>
+<h3 id="su-that-phai-noi-thang-cai-khong-test-tu-ong-uoc-o-au-ca">Sự thật phải nói thẳng — cái KHÔNG test tự động được ở đâu cả<a class="headerlink" href="#su-that-phai-noi-thang-cai-khong-test-tu-ong-uoc-o-au-ca" title="Permanent link">&para;</a></h3>
+<p>Kể cả device farm (máy trong rack — <strong>không ai giơ mã cho camera, không peripheral BLE nào ghép</strong>):
+- <strong>Camera thật</strong> — lấy nét, phơi sáng, thiếu sáng, decode mã cầm trước ống kính.
+- <strong>Peripheral BLE thật</strong> — ghép, GATT, reconnect, RSSI/tầm với dongle thật. <em>(Giả lập AND &amp; iOS đều không có sóng BLE.)</em>
+- <strong>Độ chính xác cảm biến thật</strong> — GPS drift, chuyển động, nhiệt/pin dưới tải thật.</p>
+<p>→ Việc phải làm cho phần này (đúng luật repo):
+1. Đẩy <strong>mọi logic quyết định được</strong> xuống dưới Fake, để phần cần phần cứng là tối thiểu.
+2. <strong>Test tay trên máy thật theo checklist</strong> — mỗi tính năng: "quét EAN-13 thật, giá trị == nhãn", "connect dongle trong N giây (đo, kèm nguồn+ngày)", "chạy vòng 1km thật đọc ~1km".
+3. <strong>Có screenshot/quay màn đã Read cho từng mục</strong> — đúng luật: <em>build xanh ≠ UI đúng; không nói "chạy được" khi chưa có screenshot đã Read</em>. <strong>Không bịa</strong> số trễ/độ chính xác — đo, ghi nguồn + ngày, hoặc ghi <code>chưa đo</code>.</p>
+<hr />
+<h2 id="nguon-a-kiem-2026-09-16">Nguồn (đã kiểm 2026-09-16)<a class="headerlink" href="#nguon-a-kiem-2026-09-16" title="Permanent link">&para;</a></h2>
+<p>Android: <a href="https://developer.android.com/training/data-storage/shared/photo-picker">Photo Picker</a> · <a href="https://developer.android.com/guide/topics/providers/document-provider">SAF</a> · <a href="https://developer.android.com/training/permissions/requesting">Permissions</a> · <a href="https://google.github.io/accompanist/permissions/">Accompanist Permissions</a> · <a href="https://developer.android.com/develop/ui/views/notifications">Notifications</a> · <a href="https://developer.android.com/about/versions/14/changes/fgs-types-required">FGS types (14)</a> · <a href="https://developer.android.com/media/camera/camerax">CameraX</a> · <a href="https://developers.google.com/ml-kit/vision/barcode-scanning">ML Kit Barcode</a> · <a href="https://developers.google.com/ml-kit/vision/barcode-scanning/code-scanner">Code Scanner</a> · <a href="https://developer.android.com/develop/connectivity/bluetooth/bt-permissions">BLE permissions</a> · <a href="https://developers.google.com/android/reference/com/google/android/gms/location/FusedLocationProviderClient">FusedLocation</a> · <a href="https://developer.android.com/develop/sensors-and-location/location/background">Background location</a> · <a href="https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview">Macrobenchmark</a> · <a href="https://developer.android.com/studio/run/emulator-use-camera">Emulator camera</a> · <a href="https://firebase.google.com/docs/test-lab">Firebase Test Lab</a></p>
+<p>Community AND BLE: <a href="https://github.com/NordicSemiconductor/Kotlin-BLE-Library">Nordic Kotlin-BLE</a> · <a href="https://github.com/NordicSemiconductor/Android-BLE-Library">Nordic Android-BLE</a> · <a href="https://github.com/dariuszseweryn/RxAndroidBle">RxAndroidBle</a> · OTP: <a href="https://github.com/pushpalroy/ComposeOtpVerify">ComposeOtpVerify</a> · <a href="https://github.com/banmarkovic/OtpTextField">OtpTextField</a></p>
+<p>iOS: <a href="https://developer.apple.com/documentation/uniformtypeidentifiers">UniformTypeIdentifiers</a> · <a href="https://developer.apple.com/documentation/uikit/protecting-the-user-s-privacy">Privacy/permissions</a> · <a href="https://developer.apple.com/documentation/usernotifications">UserNotifications</a> · <a href="https://developer.apple.com/documentation/usernotifications/registering-your-app-with-apns">APNs register</a> · <a href="https://developer.apple.com/documentation/visionkit/datascannerviewcontroller">DataScannerViewController</a> · <a href="https://developer.apple.com/documentation/avfoundation/avcapturemetadataoutput">AVCaptureMetadataOutput</a> · <a href="https://developer.apple.com/documentation/photokit/photospicker">PhotosPicker</a> · <a href="https://developer.apple.com/documentation/corebluetooth">CoreBluetooth</a> · <a href="https://developer.apple.com/documentation/corelocation">CoreLocation</a> · <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/">ATT / User Privacy</a> · community OTP: <a href="https://github.com/JayantBadlani/OTPFieldView-SwiftUI">OTPFieldView-SwiftUI</a> · <a href="https://github.com/hadiuzzaman524/SwiftPinput">SwiftPinput</a></p>
+<p>Test: <a href="https://developer.apple.com/documentation/testing">Swift Testing</a> · <a href="https://developer.apple.com/documentation/xctest/xctmetric">XCTMetric</a> · <a href="https://developer.android.com/develop/ui/compose/testing">Compose testing</a> · <a href="https://robolectric.org">Robolectric</a> · <a href="https://developer.android.com/training/dependency-injection/hilt-testing">Hilt testing</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+</div>
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
